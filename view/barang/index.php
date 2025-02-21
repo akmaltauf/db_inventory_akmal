@@ -16,10 +16,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">barang</a>
+          <a class="nav-link active" aria-current="page" href="http://localhost/db_inventory_akmal/view/barang/">barang</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">jenis</a>
+          <a class="nav-link" href="http://localhost/db_inventory_akmal/view/jenis/">jenis</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,6 +45,7 @@
 </nav>
     <div class="container">
     <h1>Daftar Inventory</h1>
+    <a href="view_tambah.php">tambah barang</a>
     <table>
     <table class="table table-dark table-striped">
   <thead>
@@ -76,7 +77,10 @@
                         <td><?php echo $result['id_jenis']?></td>
                         <td>
                             <a href="" class="btn btn-warning">Edit </a>
-                            <a href="" class="btn btn-danger">Hapus</a>
+                            <a href="hapus.php?id_barang=<?php echo $result ['id_barang']?>"
+                            onclick="return confirm ('yakin teu mas?')"
+                             class="btn btn-danger"><i class="fa-solid fa trash"></i>Hapus</a>
+                            
                         </td>
                     </tr>
                 <?php
